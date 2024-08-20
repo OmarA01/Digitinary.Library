@@ -1,6 +1,4 @@
 package com.digitinary.library.catalog.entity;
-
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -13,18 +11,8 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Book")
-public class Book {
+@Table(name = "CategoryType")
+public class CategoryType {
 
-    @EmbeddedId
-    private BookId bookId;
-
-    private String title;
-
-    private Author author;
-
-    private CategoryType categoryType;
-
-    private long quantity = 0;
-
+    private String type;
 }

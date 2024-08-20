@@ -1,0 +1,13 @@
+package com.digitinary.library.catalog.service;
+
+import com.digitinary.library.catalog.repository.BookRepository;
+
+public class BookService {
+    private BookRepository bookRepository;
+
+    public BookService(BookRepository bookRepository){
+        this.bookRepository = bookRepository;
+    }
+
+
+}

@@ -1,4 +1,5 @@
 package com.digitinary.library.user.entity;
 
-public class Librarian {
+public class Librarian extends User{
+
 }
