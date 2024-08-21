@@ -54,25 +54,26 @@ public class BookServiceTest {
 
     @Test
     void testGetById() {
-        Integer id = 1;
+        BookId bookId = new BookId();
+        bookId.setBookId(1);
         Book book = new Book();
-        when(bookRepository.getById(id)).thenReturn(book);
+        when(bookRepository.getById(bookId)).thenReturn(book);
 
-        Book result = bookService.getById(id);
+        Book result = bookService.getById(bookId);
 
         assertEquals(book, result);
-        verify(bookRepository, times(1)).getById(id);
+        verify(bookRepository, times(1)).getById(bookId);
     }
 
     @Test
     void testGetByName() {
         String name = "Test Book";
         Book book = new Book();
-        when(bookRepository.getByName(name)).thenReturn(book);
+        when(bookRepository.getByTitle(name)).thenReturn(book);
 
-        Book result = bookService.getByName(name);
+        Book result = bookService.getByTitle(name);
 
         assertEquals(book, result);
-        verify(bookRepository, times(1)).getByName(name);
+        verify(bookRepository, times(1)).getByTitle(name);
     }
 }

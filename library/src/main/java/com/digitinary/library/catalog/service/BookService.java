@@ -1,6 +1,10 @@
 package com.digitinary.library.catalog.service;
 
+import com.digitinary.library.catalog.entity.Book;
+import com.digitinary.library.catalog.entity.BookId;
 import com.digitinary.library.catalog.repository.BookRepository;
+
+import java.util.List;
 
 public class BookService {
     private BookRepository bookRepository;
@@ -10,4 +14,23 @@ public class BookService {
     }
 
 
+    public void save(Book book) {
+        bookRepository.save(book);
+    }
+
+    public void saveAll(List<Book> books) {
+        bookRepository.saveAll(books);
+    }
+
+    public boolean existsByName(String name) {
+        return (boolean) bookRepository.existsByName(name);
+    }
+
+    public Book getById(BookId bookId) {
+        return bookRepository.getById(bookId);
+    }
+
+    public Book getByTitle(String name) {
+        return (Book) bookRepository.getByTitle(name);
+    }
 }
