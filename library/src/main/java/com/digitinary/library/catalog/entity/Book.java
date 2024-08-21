@@ -27,6 +27,9 @@ public class Book {
     @Column(name = "category")
     private CategoryType categoryType;
 
+    @Column(name = "price")
+    private double price;
+
     @Column(name = "quantity")
     private long quantity = 0;
 
