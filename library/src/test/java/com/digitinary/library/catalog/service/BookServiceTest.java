@@ -54,8 +54,8 @@ public class BookServiceTest {
 
     @Test
     void testGetById() {
-        BookId bookId = new BookId();
-        bookId.setBookId(1);
+        BookId bookId = new BookId(1);
+
         Book book = new Book();
         when(bookRepository.getById(bookId)).thenReturn(book);
 

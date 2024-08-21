@@ -7,11 +7,10 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 @Entity
 @Embeddable
-@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
