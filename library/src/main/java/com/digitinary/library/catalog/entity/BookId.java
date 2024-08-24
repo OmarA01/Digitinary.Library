@@ -9,12 +9,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Embeddable
-@Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "BookId")
 public class BookId {
-    @Id
-    private Integer bookId;
+
+    private Integer id;
 }

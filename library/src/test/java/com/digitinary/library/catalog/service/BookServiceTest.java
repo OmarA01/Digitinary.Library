@@ -43,13 +43,13 @@ public class BookServiceTest {
 
     @Test
     void testExistsByName() {
-        String name = "Test Book";
-        when(bookRepository.existsByName(name)).thenReturn(true);
+        String title = "Test Book";
+        when(bookRepository.existsByTitle(title)).thenReturn(true);
 
-        boolean exists = bookService.existsByName(name);
+        boolean exists = bookService.existsByName(title);
 
         assertTrue(exists);
-        verify(bookRepository, times(1)).existsByName(name);
+        verify(bookRepository, times(1)).existsByTitle(title);
     }
 
     @Test

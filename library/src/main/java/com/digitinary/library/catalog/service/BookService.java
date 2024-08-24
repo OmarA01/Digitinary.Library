@@ -22,8 +22,8 @@ public class BookService {
         bookRepository.saveAll(books);
     }
 
-    public boolean existsByName(String name) {
-        return (boolean) bookRepository.existsByName(name);
+    public boolean existsByName(String title) {
+        return (boolean) bookRepository.existsByTitle(title);
     }
 
     public Book getById(BookId bookId) {

@@ -1,9 +1,6 @@
 package com.digitinary.library.catalog.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -21,11 +18,12 @@ public class Book {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "author")
+    @ManyToOne
+    @JoinColumn(name = "author_id", referencedColumnName = "authorId")
     private Author author;
 
     @Column(name = "category")
-    private CategoryType categoryType;
+    private String categoryType;
 
     @Column(name = "price")
     private double price;

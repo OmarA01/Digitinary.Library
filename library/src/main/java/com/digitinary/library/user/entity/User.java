@@ -1,30 +1,25 @@
 package com.digitinary.library.user.entity;
 
 import com.digitinary.library.catalog.entity.Book;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Set;
 
 @Entity
 @Setter
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "Users")
-public abstract class User {
+public class User {
 
     @EmbeddedId
     private UserId userId;
 
+    @Column(name = "name")
     private String name;
-
-    private Set<Book> books;
-
 
 }
